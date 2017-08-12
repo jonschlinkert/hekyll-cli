@@ -1,7 +1,7 @@
 {
   "name": "hekyll-cli",
   "description": "CLI for hekyll, the Jekyll to Handlebars theme converter.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/hekyll-cli",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/hekyll-cli",
