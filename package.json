@@ -1,0 +1,51 @@
+{
+  "name": "hekyll-cli",
+  "description": "CLI for hekyll, the Jekyll to Handlebars theme converter.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/hekyll-cli",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/hekyll-cli",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/hekyll-cli/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "cli.js"
+  ],
+  "bin": {
+    "hekyll": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "gh-clone": "^0.5.0",
+    "hekyll": "^2.0.0",
+    "log-ok": "^0.1.1",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^3.5.0"
+  },
+  "keywords": [
+    "cli",
+    "hekyll"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}
