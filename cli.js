@@ -16,7 +16,6 @@ if (argv.r) {
   }
 
   var dir = path.join('vendor', argv.src);
-  console.log(argv)
   clone(Object.assign({}, argv, {dest: dir, repo: argv.src}), function(err) {
     if (err) {
       console.log(err);
