@@ -4,24 +4,33 @@ var ok = require('log-ok');
 var path = require('path');
 var hekyll = require('hekyll');
 var clone = require('gh-clone');
-var opts = {src: 's', dest: 'd'};
+var themes = require('./themes');
+var opts = {src: 's', dest: 'd', remote: 'r'};
 var argv = require('minimist')(process.argv.slice(2), opts);
 
+if (argv.h) {
+  console.log(themes);
+  process.exit();
+}
+
 argv.src = argv.src || argv._[0];
-argv.dest = argv.dest || argv._[1] || 'src';
+argv.destBase = argv.dest || argv._[1] || 'src';
+delete argv.dest;
 
 if (argv.r) {
   if (!argv.src && typeof argv.r === 'string') {
     argv.src = argv.r;
   }
 
+  var repo = themes[argv.r] || argv.r;
   var dir = path.join('vendor', argv.src);
-  clone(Object.assign({}, argv, {dest: dir, repo: argv.src}), function(err) {
+  clone(Object.assign({}, argv, {dest: dir, repo: repo}), function(err) {
     if (err) {
       console.log(err);
       process.exit(1);
     } else {
-      convert(Object.assign({}, argv, {src: dir}));
+      console.log('converting...');
+      convert(Object.assign({}, argv, {cwd: dir, destBase: argv.destBase}));
     }
   });
 } else {
@@ -29,7 +38,7 @@ if (argv.r) {
 }
 
 function convert(options) {
-  return hekyll(options)
+  return hekyll.build(options)
     .then(function() {
       ok('finished');
       process.exit();

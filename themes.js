@@ -1,0 +1,18 @@
+module.exports = {
+  lanyon:            'poole/lanyon',
+  architect:         'pages-themes/architect',
+  cayman:            'pages-themes/cayman',
+  dinky:             'pages-themes/dinky',
+  hacker:            'pages-themes/hacker',
+  leapday:           'pages-themes/leap-day',
+  merlot:            'pages-themes/merlot',
+  midnight:          'pages-themes/midnight',
+  minimal:           'pages-themes/minimal',
+  modernist:         'pages-themes/modernist',
+  slate:             'pages-themes/slate',
+  tactile:           'pages-themes/tactile',
+  timemachine:       'pages-themes/time-machine',
+  jekyllcaymantheme: 'pietromenna/jekyll-cayman-theme',
+  hyde:              'poole/hyde',
+  poole:             'poole/poole',
+};
